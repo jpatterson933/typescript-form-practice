@@ -7,6 +7,7 @@ const circ = (diameter: number) => {
 console.log(circ(10))
 
 
+//when declaring types, use :
 // explicit types
 let character: string;
 let age: number;
@@ -38,3 +39,18 @@ let nt: {
 
 // type any means this can be any type
 let test: any = 25;
+
+// declare a variable as a function
+let greet: Function;
+
+greet = () => {
+    console.log("hello")
+}
+
+// use ? like a?: to declare optional value or set a default value for the variable after its type is declared
+// dont use optional value or default value together
+const add = (a: number, b: number, c: number | string = 10) => {
+    console.log(a + b);
+}
+
+add (5, 10);

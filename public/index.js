@@ -1,8 +1,10 @@
+"use strict";
 // function to return a circle - we can set a type for the 
 var circ = function (diameter) {
     return diameter * Math.PI;
 };
 console.log(circ(10));
+//when declaring types, use :
 // explicit types
 var character;
 var age;
@@ -22,3 +24,15 @@ var ninjaOne;
 var nt;
 // type any means this can be any type
 var test = 25;
+// declare a variable as a function
+var greet;
+greet = function () {
+    console.log("hello");
+};
+// use ? like a?: to declare optional value or set a default value for the variable after its type is declared
+// dont use optional value or default value together
+var add = function (a, b, c) {
+    if (c === void 0) { c = 10; }
+    console.log(a + b);
+};
+add(5, 10);
