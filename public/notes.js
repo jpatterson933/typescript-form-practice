@@ -69,3 +69,20 @@ let logDeets;
 logDeets = (ninja) => {
     console.log(`${ninja.name} is ${ninja.age} years old`);
 };
+// classes
+// class Invoice {
+//     // cannot be changed / it can still be accessed but it CANNOT ever be changed
+//     readonly client: string;
+//     // setting this as private means we cannot access this outside of the class - so cant be console logged but can be accessed on the format output
+//     private details: string;
+//     // public is default value
+//     public amount: number;
+//     constructor(c: string, d: string, a: number){
+//         this.client = c;
+//         this.details = d;
+//         this.amount = a;
+//     }
+//     format() {
+//         return `${this.client} owes #${this.amount} for ${this.details}`;
+//     }
+// }
