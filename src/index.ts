@@ -1,13 +1,18 @@
+// Elements grabbed from the html page
 const kingsChair = document.querySelector('.robot-lord') as HTMLFormElement;
 const listOfLords = document.querySelector('.robot-lord-list') as HTMLUListElement;
+
+// Imported classes for robots
 import { RobotLord } from './classes/Robots.js';
 
+// List of Robot Lords
 const firstLord = new RobotLord ('Sir Galveen', 67, 3124, 439, 9000 );
 const lordsSon = new RobotLord('Flair Eentoe', 17, 890, 3219, 2918);
+// Here we are only allowing RobotLords to be added to the robotLords array
+let robotLords: RobotLord[] = [];
+robotLords = [firstLord, lordsSon]
 
-const robotKings = [firstLord, lordsSon]
-
-console.log(robotKings);
+console.log(robotLords);
 
 // interfaces
 interface IsPerson {
@@ -16,14 +21,12 @@ interface IsPerson {
     speak(a: string): void;
     spend(a: number): Number;
 }
-
 interface isBot {
     name: string;
     age: number;
     speak(a: string): void;
     dance(a: boolean): (string | boolean);
 }
-
 interface botServant {
     name: string;
     age: number;
@@ -31,22 +34,19 @@ interface botServant {
     willServe: boolean;
 }
 
+// Variables being set to created interfaces
 const jerryBot: botServant = {
     name: 'Jerry',
     age: 132,
     duties: ['sweep', 'mop', 'deep clean shit'],
     willServe: true
 }
-
 const newBot: botServant = {
     name: 'NoobNoob',
     age: 12,
     duties: ['chill', 'relax', 'focus'],
     willServe: true
 }
-
-console.log(jerryBot, newBot)
-
 const botLord: isBot = {
     name: 'Robo-Lord',
     age: 29873,
@@ -58,11 +58,6 @@ const botLord: isBot = {
         return choice;
     }
 }
-console.log(botLord)
-
-
-
-// here we set a variable to an interface
 const me: IsPerson = {
     name: 'shaun',
     age: 30,
@@ -75,38 +70,27 @@ const me: IsPerson = {
     }
 };
 
-console.log(me);
-
-
-
-
-
+// imported classes for our invoice and payment form
 import { Invoice } from './classes/Invoice.js';
 import { ListTemplate } from './classes/ListTemplate.js';
 import { Payment } from './classes/Payments.js';
+// function formatter
 import { HasFormatter } from './interfaces/HasFormatter.js';
-
 
 // let docOne: HasFormatter;
 // let docTwo: HasFormatter;
-
 // docOne = new Invoice('yoshi', 'webwork', 250);
 // docTwo = new Payment ('mario', 'plumbing', 200);
-
 // let docs: HasFormatter[] = [];
 // docs.push(docOne);
 // docs.push(docTwo);
-
 // console.log(docs)
-
 // const anchor = document.querySelector('a');
 // console.log(anchor)
 // const form = document.querySelector('form')!;
 // set the type using 'as' 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
-
 // console.log(form.children)
-
 const invOne = new Invoice ('mario', 'work on web', 250);
 const invTwo = new Invoice ('luigi', 'work on web', 500);
 
@@ -132,19 +116,14 @@ const list = new ListTemplate(ul);
 // event listener put onto our form, and we console.log the values that are submitted
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
-
     let values: [string, string, number]
     values = [tofrom.value, details.value, amount.valueAsNumber]
-
     let doc: HasFormatter;
     if(type.value === 'invoice') {
         doc = new Invoice(...values)
     } else {
         doc = new Payment(...values)
     }
-
     list.render(doc, type.value, 'end')
-
-
     console.log(doc)
 });

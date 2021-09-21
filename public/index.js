@@ -1,10 +1,16 @@
+// Elements grabbed from the html page
 const kingsChair = document.querySelector('.robot-lord');
 const listOfLords = document.querySelector('.robot-lord-list');
+// Imported classes for robots
 import { RobotLord } from './classes/Robots.js';
+// List of Robot Lords
 const firstLord = new RobotLord('Sir Galveen', 67, 3124, 439, 9000);
 const lordsSon = new RobotLord('Flair Eentoe', 17, 890, 3219, 2918);
-const robotKings = [firstLord, lordsSon];
-console.log(robotKings);
+// Here we are only allowing RobotLords to be added to the robotLords array
+let robotLords = [];
+robotLords = [firstLord, lordsSon];
+console.log(robotLords);
+// Variables being set to created interfaces
 const jerryBot = {
     name: 'Jerry',
     age: 132,
@@ -17,7 +23,6 @@ const newBot = {
     duties: ['chill', 'relax', 'focus'],
     willServe: true
 };
-console.log(jerryBot, newBot);
 const botLord = {
     name: 'Robo-Lord',
     age: 29873,
@@ -29,8 +34,6 @@ const botLord = {
         return choice;
     }
 };
-console.log(botLord);
-// here we set a variable to an interface
 const me = {
     name: 'shaun',
     age: 30,
@@ -42,7 +45,7 @@ const me = {
         return amount;
     }
 };
-console.log(me);
+// imported classes for our invoice and payment form
 import { Invoice } from './classes/Invoice.js';
 import { ListTemplate } from './classes/ListTemplate.js';
 import { Payment } from './classes/Payments.js';
