@@ -1,18 +1,10 @@
 const kingsChair = document.querySelector('.robot-lord');
 const listOfLords = document.querySelector('.robot-lord-list');
-import { RobotLord } from './classes/RobotLord.js';
+import { RobotLord } from './classes/Robots.js';
 const firstLord = new RobotLord('Sir Galveen', 67, 3124, 439, 9000);
 const lordsSon = new RobotLord('Flair Eentoe', 17, 890, 3219, 2918);
 const robotKings = [firstLord, lordsSon];
 console.log(robotKings);
-const displayKings = function () {
-    robotKings.map(king => {
-        console.log(king);
-        return 'this is not working';
-    });
-};
-console.log(displayKings);
-displayKings();
 const jerryBot = {
     name: 'Jerry',
     age: 132,
