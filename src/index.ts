@@ -1,3 +1,28 @@
+const kingsChair = document.querySelector('.robot-lord') as HTMLFormElement;
+const listOfLords = document.querySelector('.robot-lord-list') as HTMLUListElement;
+import { RobotLord } from './classes/RobotLord.js';
+
+const firstLord = new RobotLord ('Sir Galveen', 67, 3124, 439, 9000 );
+const lordsSon = new RobotLord('Flair Eentoe', 17, 890, 3219, 2918);
+
+const robotKings = [firstLord, lordsSon]
+
+console.log(robotKings)
+
+const displayKings = function () {
+
+
+    robotKings.map(king => {
+        console.log(king)
+        return 'this is not working';
+    })
+}
+console.log(displayKings)
+displayKings();
+
+
+
+
 // interfaces
 interface IsPerson {
     name: string;
@@ -13,6 +38,29 @@ interface isBot {
     dance(a: boolean): (string | boolean);
 }
 
+interface botServant {
+    name: string;
+    age: number;
+    duties: string[];
+    willServe: boolean;
+}
+
+const jerryBot: botServant = {
+    name: 'Jerry',
+    age: 132,
+    duties: ['sweep', 'mop', 'deep clean shit'],
+    willServe: true
+}
+
+const newBot: botServant = {
+    name: 'NoobNoob',
+    age: 12,
+    duties: ['chill', 'relax', 'focus'],
+    willServe: true
+}
+
+console.log(jerryBot, newBot)
+
 const botLord: isBot = {
     name: 'Robo-Lord',
     age: 29873,
@@ -20,13 +68,13 @@ const botLord: isBot = {
         console.log('I will take over the world!');
     },
     dance(choice: boolean): boolean {
-
         choice = true;
         return choice;
     }
 }
-
 console.log(botLord)
+
+
 
 // here we set a variable to an interface
 const me: IsPerson = {
@@ -51,6 +99,7 @@ import { Invoice } from './classes/Invoice.js';
 import { ListTemplate } from './classes/ListTemplate.js';
 import { Payment } from './classes/Payments.js';
 import { HasFormatter } from './interfaces/HasFormatter.js';
+
 
 // let docOne: HasFormatter;
 // let docTwo: HasFormatter;
