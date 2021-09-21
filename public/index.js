@@ -1,3 +1,16 @@
+const botLord = {
+    name: 'Robo-Lord',
+    age: 29873,
+    speak(text) {
+        console.log('I will take over the world!');
+    },
+    dance(choice) {
+        choice = true;
+        return choice;
+    }
+};
+console.log(botLord);
+// here we set a variable to an interface
 const me = {
     name: 'shaun',
     age: 30,
@@ -62,15 +75,3 @@ form.addEventListener('submit', (e) => {
     list.render(doc, type.value, 'end');
     console.log(doc);
 });
-//shorthand way to write invoice with properties assigned to the varialbe (properties: public, private, readonly)
-// class InvoiceTwo {
-//     constructor(
-//         readonly client: string,
-//         private details: string,
-//         public amount: number,
-//     ){}
-//     format () {
-//         return `${this.client} owes ${this.amount} for ${this.details}`
-//     }
-// }
-// console.log(InvoiceTwo)

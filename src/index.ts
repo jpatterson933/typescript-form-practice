@@ -6,6 +6,29 @@ interface IsPerson {
     spend(a: number): Number;
 }
 
+interface isBot {
+    name: string;
+    age: number;
+    speak(a: string): void;
+    dance(a: boolean): (string | boolean);
+}
+
+const botLord: isBot = {
+    name: 'Robo-Lord',
+    age: 29873,
+    speak( text: string): void {
+        console.log('I will take over the world!');
+    },
+    dance(choice: boolean): boolean {
+
+        choice = true;
+        return choice;
+    }
+}
+
+console.log(botLord)
+
+// here we set a variable to an interface
 const me: IsPerson = {
     name: 'shaun',
     age: 30,
@@ -16,9 +39,11 @@ const me: IsPerson = {
         console.log("I spend", amount)
         return amount;
     }
-}
+};
 
-console.log(me)
+console.log(me);
+
+
 
 
 
@@ -47,8 +72,8 @@ const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
 // console.log(form.children)
 
-const invOne = new Invoice ('mario', 'work on web', 250)
-const invTwo = new Invoice ('luigi', 'work on web', 500)
+const invOne = new Invoice ('mario', 'work on web', 250);
+const invTwo = new Invoice ('luigi', 'work on web', 500);
 
 // we only allow invoices to be added to the invoice array
 // let invoices: Invoice[] = [];
@@ -67,7 +92,7 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 // list template instnace
 // adding the '!' at the end of this tells typescript that the ul will definitly be found on the page
 const ul = document.querySelector('ul')!;
-const list = new ListTemplate(ul)
+const list = new ListTemplate(ul);
 // add event listener
 // event listener put onto our form, and we console.log the values that are submitted
 form.addEventListener('submit', (e: Event) => {
@@ -87,19 +112,4 @@ form.addEventListener('submit', (e: Event) => {
 
 
     console.log(doc)
-})
-
-//shorthand way to write invoice with properties assigned to the varialbe (properties: public, private, readonly)
-// class InvoiceTwo {
-//     constructor(
-//         readonly client: string,
-//         private details: string,
-//         public amount: number,
-//     ){}
-
-//     format () {
-//         return `${this.client} owes ${this.amount} for ${this.details}`
-//     }
-// }
-
-// console.log(InvoiceTwo)
+});
