@@ -1,6 +1,7 @@
 // Elements grabbed from the html page
 // Imported classes for robots
 import { RobotLord } from './classes/Robots.js';
+import { CardTemplate } from './classes/ListTemplate.js';
 // List of Robot Lords
 const firstLord = new RobotLord('Sir Galveen', 67, 3124, 439, 9000);
 const lordsSon = new RobotLord('Flair Eentoe', 17, 890, 3219, 2918);
@@ -24,6 +25,23 @@ const age = document.querySelector('#age');
 const strength = document.querySelector('#strength');
 const attack = document.querySelector('#attack');
 const defense = document.querySelector('#defense');
+const div = document.querySelector('div');
+const card = new CardTemplate(div);
+// add event listener
+// event listener put onto our form, and we console.log the values that are submitted
+// const test = ((e: Event) => {
+//     e.preventDefault();
+//     let values: [string, number, number, number, number]
+//     values = [name, age, strength, attack, defense]
+//     let doc: HasFormatter;
+//     if(type.value === 'invoice') {
+//         doc = new RobotLord(...values)
+//     } else {
+//         doc = new RobotLord(...values)
+//     }
+//     list.render(doc, type.value, 'end')
+//     console.log(doc)
+// });
 name.append(firstLord.name);
 console.log(robotLords);
 // Variables being set to created interfaces

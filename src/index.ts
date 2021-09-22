@@ -2,6 +2,7 @@
 
 // Imported classes for robots
 import { RobotLord } from './classes/Robots.js';
+import { CardTemplate } from './classes/ListTemplate.js';
 
 // List of Robot Lords
 const firstLord = new RobotLord ('Sir Galveen', 67, 3124, 439, 9000 );
@@ -33,15 +34,25 @@ const strength = document.querySelector('#strength') as HTMLParagraphElement;
 const attack = document.querySelector('#attack') as HTMLParagraphElement;
 const defense = document.querySelector('#defense') as HTMLParagraphElement;
 
+const div = document.querySelector('div')!;
+const card = new CardTemplate(div);
+// add event listener
+// event listener put onto our form, and we console.log the values that are submitted
+// const test = ((e: Event) => {
+//     e.preventDefault();
+//     let values: [string, number, number, number, number]
+//     values = [name, age, strength, attack, defense]
+//     let doc: HasFormatter;
+//     if(type.value === 'invoice') {
+//         doc = new RobotLord(...values)
+//     } else {
+//         doc = new RobotLord(...values)
+//     }
+//     list.render(doc, type.value, 'end')
+//     console.log(doc)
+// });
+
 name.append(firstLord.name)
-
-
-
-
-
-
-
-
 
 
 console.log(robotLords);
@@ -139,8 +150,6 @@ const type = document.querySelector('#type') as HTMLSelectElement;
 const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
-
-
 
 // list template instnace
 // adding the '!' at the end of this tells typescript that the ul will definitly be found on the page

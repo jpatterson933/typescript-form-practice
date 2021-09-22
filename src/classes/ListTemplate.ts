@@ -23,6 +23,8 @@ export class ListTemplate {
     }
 }
 
+
+// card template that we are going to try and use to display robot lords onto page.
 export class CardTemplate {
     constructor(private container: HTMLDivElement){}
 
