@@ -23,6 +23,29 @@ export class ListTemplate {
     }
 }
 
+export class CardTemplate {
+    constructor(private container: HTMLDivElement){}
+
+    render(item: HasFormatter, heading: string, pos: 'start' | 'end'){
+        const div = document.createElement('div');
+        const h1 = document.createElement('h1');
+        h1.innerText = heading;
+
+        div.append(h1);
+
+        const p = document.createElement('p');
+        p.innerText = item.format();
+
+        div.append(p);
+
+        if (pos === 'start'){
+            this.container.prepend(div);
+        } else {
+            this.container.append(div);
+        }
+    }
+}
+
 /*
 1. register a list container (ul) in the constructor
 2. create a render method to render a new 'li' to the container
