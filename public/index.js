@@ -1,6 +1,4 @@
 // Elements grabbed from the html page
-const kingsChair = document.querySelector('.robot-lord');
-const listOfLords = document.querySelector('.robot-lord-list');
 // Imported classes for robots
 import { RobotLord } from './classes/Robots.js';
 // List of Robot Lords
@@ -8,7 +6,18 @@ const firstLord = new RobotLord('Sir Galveen', 67, 3124, 439, 9000);
 const lordsSon = new RobotLord('Flair Eentoe', 17, 890, 3219, 2918);
 // Here we are only allowing RobotLords to be added to the robotLords array
 let robotLords = [];
-robotLords = [firstLord, lordsSon];
+// here we are adding our robots to the robotlord arrays
+robotLords.push(firstLord, lordsSon);
+const showRobots = () => {
+    const kingsChair = document.querySelector('.robots');
+    for (let i = 0; i < robotLords.length; i++) {
+        const p = document.createElement('p');
+        const attack = robotLords[i].attack;
+        p.textContent = robotLords[i].name;
+        kingsChair.append(p);
+    }
+};
+showRobots();
 console.log(robotLords);
 // Variables being set to created interfaces
 const jerryBot = {
