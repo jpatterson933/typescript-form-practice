@@ -12,12 +12,19 @@ const showRobots = () => {
     const kingsChair = document.querySelector('.robots');
     for (let i = 0; i < robotLords.length; i++) {
         const p = document.createElement('p');
-        const attack = robotLords[i].attack;
         p.textContent = robotLords[i].name;
         kingsChair.append(p);
     }
 };
 showRobots();
+// console.log(invoices)
+// here we are grabbing the ids from our form and setting them as specific html elements using typescript
+const name = document.querySelector('#name');
+const age = document.querySelector('#age');
+const strength = document.querySelector('#strength');
+const attack = document.querySelector('#attack');
+const defense = document.querySelector('#defense');
+name.append(firstLord.name);
 console.log(robotLords);
 // Variables being set to created interfaces
 const jerryBot = {

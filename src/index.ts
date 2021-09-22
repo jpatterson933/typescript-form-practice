@@ -5,7 +5,6 @@ import { RobotLord } from './classes/Robots.js';
 
 // List of Robot Lords
 const firstLord = new RobotLord ('Sir Galveen', 67, 3124, 439, 9000 );
-
 const lordsSon = new RobotLord('Flair Eentoe', 17, 890, 3219, 2918);
 // Here we are only allowing RobotLords to be added to the robotLords array
 let robotLords: RobotLord[] = [];
@@ -18,19 +17,26 @@ const showRobots = () => {
 
     for (let i = 0; i < robotLords.length; i++) {
         const p = document.createElement('p');
-        const attack = robotLords[i].attack;
         p.textContent = robotLords[i].name;
-        
-
+    
         kingsChair.append(p)
-
-        
 
  
     }
 }
-
 showRobots();
+// console.log(invoices)
+// here we are grabbing the ids from our form and setting them as specific html elements using typescript
+const name = document.querySelector('#name') as HTMLHeadingElement;
+const age = document.querySelector('#age') as HTMLParagraphElement;
+const strength = document.querySelector('#strength') as HTMLParagraphElement;
+const attack = document.querySelector('#attack') as HTMLParagraphElement;
+const defense = document.querySelector('#defense') as HTMLParagraphElement;
+
+name.append(firstLord.name)
+
+
+
 
 
 
@@ -133,6 +139,8 @@ const type = document.querySelector('#type') as HTMLSelectElement;
 const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
+
+
 
 // list template instnace
 // adding the '!' at the end of this tells typescript that the ul will definitly be found on the page
